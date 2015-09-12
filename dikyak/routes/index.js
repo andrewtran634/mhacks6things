@@ -39,6 +39,13 @@ router.put('/pics/:pic/upvote', function(req, res, next) {
     res.json(pic);
   });
 });
+router.put('/pics/:pic/downvote', function(req, res, next) {
+	req.pic.downvote(function(err, pic){
+    if (err) { return next(err); }
+
+    res.json(pic);
+  });
+});
 router.delete('/pics/:pic', function(req, res, next) {
 	var victim = req.pic;
 	victim.remove(function (err) {
