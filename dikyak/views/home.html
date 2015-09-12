@@ -1,0 +1,10 @@
+<div ng-controller="HomeController">
+	<div ng-repeat="pic in pics">
+	   <img ng-src="{{pic.url}}">
+	   <a href="deets/{{pic.id}}">{{pic.numcomments}} comments</a>
+	   <!-- attach plusone to arrows -->
+	   <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+	   <p>{{pic.likes}}</p>
+	   <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+	</div>
+</div>
