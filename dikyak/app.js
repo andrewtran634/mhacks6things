@@ -1,4 +1,6 @@
 var mongoose = require('mongoose');
+require('./models/Pics');
+require('./models/Comments');
 mongoose.connect('mongodb://localhost/dikyak')
 
 var express = require('express');
