@@ -13,13 +13,7 @@ router.get('/pics', function(req, res, next) {
 	});
 });
 
-router.post('/pics', function(req, res, next) {
-	var pic = new Pic(req.body);
-	pic.save(function(err, pic) {
-		if(err) { return next(err); }
-		res.json(pic);
-	});
-});
+
 router.param('pic', function(req, res, next, id) {
 	var query = Pic.findById(id);
 	query.exec(function (err, pic) {
@@ -55,7 +49,20 @@ router.delete('/pics/:pic', function(req, res, next) {
 });
 
 
+router.get('/upload', function(req, res, next) {
+	res.render('upload');
+});
 
+router.post('/upload', function(req, res, next) {
+router.post('/pics', function(req, res, next) {
+	var pic = new Pic(req.body);
+	pic.save(function(err, pic) {
+		if(err) { return next(err); }
+		res.json(pic);
+	});
+});
+	res.redirect('/');
+});
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
