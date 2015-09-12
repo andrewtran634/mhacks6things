@@ -12,4 +12,8 @@ PicSchema.methods.upvote = function(cb) {
   this.likes += 1;
   this.save(cb);
 }; 
+PicSchema.methods.downvote = function(cb) {
+  this.likes -= 1;
+  this.save(cb);
+}; 
 mongoose.model('Pic', PicSchema);
