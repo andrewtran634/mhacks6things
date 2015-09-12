@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 
 var Pic = mongoose.model('Pic');
 var Comment = mongoose.model('Comment');
+
 var express = require('express');
 var router = express.Router();
 
@@ -19,7 +20,33 @@ router.post('/pics', function(req, res, next) {
 		res.json(pic);
 	});
 });
+router.param('pic', function(req, res, next, id) {
+	var query = Pic.findById(id);
+	query.exec(function(err, pic) {
+		if(err) {return next(err);}
+		if(!pic) {return next(new Error('cannot find pic'));}
+		req.pic = pic;
+		return next();
+	});
+});
+router.put('/pics/:pic/upvote', function(req, res, next) {
+	req.pic.upvote(function(err, pic){
+    if (err) { return next(err); }
 
+    res.json(pic);
+  });
+});
+router.get('/pics/:pic', function(req, res, next) {
+	res.json(req.pic.url);
+});
+
+router.delete('/pics/:pic', function(req, res, next) {
+	var victim = req.pic;
+	victim.remove(function (err) {
+		if(err) {return next(err);}
+		res.json('');
+	});
+})
 
 
 /* GET home page. */

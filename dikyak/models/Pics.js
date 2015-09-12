@@ -8,4 +8,8 @@ PicSchema = new mongoose.Schema({
 	timestamp: {type: Date, default: Date.now},
 });
 
+PicSchema.methods.upvote = function(cb) {
+  this.likes += 1;
+  this.save(cb);
+}; 
 mongoose.model('Pic', PicSchema);

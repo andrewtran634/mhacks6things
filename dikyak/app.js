@@ -1,8 +1,8 @@
 var mongoose = require('mongoose');
 require('./models/Pics');
 require('./models/Comments');
-mongoose.connect('mongodb://localhost/dikyak')
-
+//mongoose.connect('mongodb://localhost/dikyak')
+mongoose.connect('mongodb://root:root@ds041581.mongolab.com:41581/dikyak');
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
