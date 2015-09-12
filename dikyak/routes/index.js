@@ -61,7 +61,7 @@ router.post('/pics', function(req, res, next) {
 		res.json(pic);
 	});
 });
-	res.redirect('/');
+	res.redirect('/upload');
 });
 
 /* GET home page. */
