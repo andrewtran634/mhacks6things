@@ -1,21 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<base href="/">
-
-	<title>DikYak</title><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-</head>
-<body>
+<div ng-controller="HomeController">
 	<div ng-repeat="pic in pics">
-	<img ng-src="{{pic.url}}">
-	<a href="deets/{{pic.id}}">{{pic.numcomments}} comments</a>
-	<!-- attach plusone to arrows -->
-	<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
-	<p>{{pic.likes}}</p>
-	<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+	   <img ng-src="{{pic.url}}">
+	   <a href="deets/{{pic.id}}">{{pic.numcomments}} comments</a>
+	   <!-- attach plusone to arrows -->
+	   <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+	   <p>{{pic.likes}}</p>
+	   <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
 	</div>
-</body>
-</html>
+</div>

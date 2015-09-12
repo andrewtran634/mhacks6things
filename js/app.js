@@ -10,7 +10,7 @@ app.config(function($routeProvider) {
 		templateUrl: 'view/mine.html'
 	})
 	.when('/settings', {
-		controller: 'SettingsController'
+		controller: 'SettingsController',
 		templateUrl: 'view/settings.html'
 	})
 
