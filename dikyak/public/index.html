@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 <head>
 	<meta charset="UTF-8">
 	<!--<base href="/">-->
@@ -23,19 +23,19 @@
 	<script src="javascript/appRoutes.js"></script>
 	<script src="javascript/app.js"></script>
 </head>
-<body ng-app="dikyak">
+<body>
 
 <div id="top">
 	<h1 id="title">DikYak</h1>
 	<i class="fa fa-plus fa-2x"></i>
 </div>
 
-<ng-view></ng-view>
+<div ng-view></div>
     
 <div id="navbar">
-    <a href=""><i class="fa fa-home fa-2x"></i></a>
-    <a href="mine"><i class="fa fa-user fa-2x"></i></a>
-    <a href="settings"><i class="fa fa-gear fa-2x"></i></a>
+    <a href="/"><i class="fa fa-home fa-2x"></i></a>
+    <a href="/mine"><i class="fa fa-user fa-2x"></i></a>
+    <a href="/settings"><i class="fa fa-gear fa-2x"></i></a>
 </div>
 <!--
 <nav class="navbar navbar-default navbar-fixed-bottom">

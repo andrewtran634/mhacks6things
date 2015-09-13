@@ -1,4 +1,5 @@
-"name": "starter-node-angular",
+{
+"name": "dikyak",
     "version": "1.0.0",
     "dependencies": {
         "bootstrap": "latest",

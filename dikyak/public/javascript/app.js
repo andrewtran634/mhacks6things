@@ -1,1 +1,1 @@
-var app = angular.module('dikyak', ['ngRoute', 'appRoutes', 'HomeController', 'MineController', 'SettingsController', 'picsService']);
+angular.module('app', ['ngRoute', 'appRoutes', 'HomeController', 'picsService']);
