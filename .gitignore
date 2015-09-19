@@ -1,2 +1,9 @@
+<<<<<<< HEAD
 node_modules/
 pikyak/public/libs/
+=======
+dikyak/bower_components/
+dikyak/node_modules/
+dikyak/public/libs/
+
+>>>>>>> a27bde526b6ad186c566f77872e4aebe14e02494

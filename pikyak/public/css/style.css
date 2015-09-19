@@ -41,4 +41,8 @@ body {
     background: rgb(232, 69, 69, 0.3);
 }
 
+ng-view {
+    height: 100%;
+}
+
 </style>
