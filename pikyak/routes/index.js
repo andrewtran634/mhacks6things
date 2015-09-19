@@ -6,6 +6,8 @@ var Comment = mongoose.model('Comment');
 var express = require('express');
 var router = express.Router();
 
+var fs = require('fs');
+
 router.get('/pics', function(req, res, next) {
 	Pic.find(function(err, pics) {
 		if(err) {return next(err);}
@@ -54,14 +56,19 @@ router.get('/upload', function(req, res, next) {
 });
 
 router.post('/upload', function(req, res, next) {
-router.post('/pics', function(req, res, next) {
-	var pic = new Pic(req.body);
-	pic.save(function(err, pic) {
-		if(err) { return next(err); }
-		res.json(pic);
+//router.post('/pics', function(req, res, next) {
+	//res.redirect('/upload');
+	//var tmp_path = req.files.path;
+	//var target_path = './pics' + req.files.name;
+	fs.readFile(req.files.fileUpload.path, function(err, data) {
+		if(err) {return next(err);}
+		var newPath = './pics'+ req.files.fileUpload.name;
+		fs.writeFile(newPath, data, function(err) {
+			if(err) return next(err);
+			res.send('fuck');
+		});
 	});
-});
-	res.redirect('/upload');
+
 });
 
 /* GET home page. */
