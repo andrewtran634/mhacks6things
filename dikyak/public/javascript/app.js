@@ -1,1 +1,1 @@
-angular.module('app', ['ngRoute', 'appRoutes', 'HomeController', 'picsService']);
+var app = angular.module('app', ['appRoutes', 'HomeController', 'picsService']);

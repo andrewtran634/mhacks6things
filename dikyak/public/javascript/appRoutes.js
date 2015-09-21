@@ -1,4 +1,4 @@
-angular.module('appRoutes',[]).config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+angular.module('appRoutes',['ngRoute']).config(['$routeProvider', function($routeProvider) {
 	$routeProvider
 	.when('/', {
         templateUrl: 'views/home.html',
@@ -21,7 +21,6 @@ angular.module('appRoutes',[]).config(['$routeProvider', '$locationProvider', fu
 		redirectTo: '/'
 	});
     
-    $locationProvider.html5Mode(true);
 }]);
                                        
                                     
